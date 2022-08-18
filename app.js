@@ -2,14 +2,24 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const { Client } = require('pg')
-const dbInfo = {}//require('../DB/dbInfo')
+//const dbInfo = {}//require('../DB/dbInfo')
 app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
+
+const dbInfo = {
+    user:'ipoqotfretrjcn'
+    ,password:'3b657e1f6c28e8851b3fde923decf18d46325915203bf3d02c0c4b40f4aa9412'
+    ,port:5432
+    ,host:'ec2-54-85-56-210.compute-1.amazonaws.com'
+    ,database:'dc4keofndpurhh'
+    ,ssl:{rejectUnauthorized:false}
+}
+
 app.get('/', (req, res) =>{
-    res.send("Success!")
+    res.send('Success!')
 })
 
 app.get('/kor',(req, res)=>{
